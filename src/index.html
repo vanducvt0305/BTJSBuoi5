@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTJS Buoi5</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <div class="container mx-auto text-white">
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm cursor-default"
+        >
+          Xác định điểm chuẩn của hội đồng:
+        </button>
+        <input
+          id="diemChuanHoiDong"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Nhập điểm thi môn Toán:
+        </button>
+        <input
+          id="diemThiToan"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Nhập điểm thi môn Vật lý:
+        </button>
+        <input
+          id="diemThiVatLy"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Nhập điểm thi môn Hoá:
+        </button>
+        <input
+          id="diemThiHoa"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[400px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Khu vực(nhập X nếu k phải khu vực ưu tiên):
+        </button>
+        <input
+          id="khuVuc"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[400px] text-center border border-solid bg-orange-400 rounded-sm cursor-default"
+        >
+          Đối tượng(Nhập 0 nếu k thuộc đối tượng ưu tiên):
+        </button>
+        <input
+          id="doiTuong"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-purple-600 rounded-sm"
+      >
+        <button id="tongKetClick" class="text-2xl">Tổng Kết</button>
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-orange-400 rounded-sm"
+      >
+        <div class="w-full max-w-[250px] text-2xl">
+          Tổng điểm: <span id="tongDiem"></span>
+        </div>
+        <div class="w-full mt-8 text-2xl">
+          Tổng kết: <span id="tongKet"></span>
+        </div>
+      </div>
+
+      <br />
+      <br />
+    </div>
+    <hr />
+    <!-- Tính tiền điện  -->
+    <div class="container text-white mx-auto">
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Nhập số kw điện tiêu thụ:
+        </button>
+        <input
+          id="soKwDienTieuThu"
+          class="ml-4 py-4 my-4 block w-full max-w-[100px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-purple-600 rounded-sm"
+      >
+        <button id="tongKetDienDom" class="text-2xl">Tổng Kết</button>
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-orange-400 rounded-sm"
+      >
+        <div class="w-full mt-2 text-2xl">
+          Tổng tiền điện tháng này: <span id="tongKetTienDien"></span>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <!-- Tính thuế phải trả -->
+    <div class="container text-white mx-auto">
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Họ tên:
+        </button>
+        <input
+          id="hoTen"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Tổng thu nhập năm:
+        </button>
+        <input
+          placeholder="Triệu Đồng"
+          id="thuNhap"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm placeholder-white"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Số người phụ thuộc:
+        </button>
+        <input
+          id="soNguoiPhuThuoc"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-purple-600 rounded-sm"
+      >
+        <button id="tongKetThue" class="text-2xl">Tổng Kết</button>
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-orange-400 rounded-sm"
+      >
+        <div class="w-full mt-2 text-2xl">
+          Tổng số thuế phải trả: <span id="tongKetThuNhapPhaiTra"></span>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <!-- Tính tiền Cap  -->
+    <div class="container text-white mx-auto mb-24">
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Mã khách hàng:
+        </button>
+        <input
+          id="maKhachHang"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 mt-4 mb-0 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-purple-500 rounded-sm cursor-default"
+        >
+          Loại khách hàng
+        </button>
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 mt-1 mb-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Khách hàng cá nhân</button
+        ><button
+          class="ml-4 py-4 mt-1 mb-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Khách hàng doanh nghiệp
+        </button>
+      </div>
+      <div
+        class="flex justify-between items-center rounded-lg text-center max-w-[600px] mx-auto"
+      >
+        <input
+          checked
+          type="radio"
+          name="option"
+          value="KHCN"
+          class="block w-[24px] h-[24px] text-center mx-auto"
+        />
+
+        ><input
+          type="radio"
+          name="option"
+          value="KHDN"
+          class="block w-[24px] h-[24px] mx-auto"
+        />
+      </div>
+      <div
+        id="showKetNoi"
+        class="flex justify-center items-center rounded-lg hidden opacity-0 transition-all duration-1000"
+      >
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Số kết nối:
+        </button>
+        <input
+          id="soKetNoi"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div class="flex justify-center items-center rounded-lg">
+        <button
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 bg-orange-400 rounded-sm cursor-default"
+        >
+          Số kênh cao cấp:
+        </button>
+        <input
+          id="soKenhCaoCap"
+          class="ml-4 py-4 my-4 block w-full max-w-[300px] text-center border border-solid border-red-300 outline-none bg-orange-400 rounded-sm"
+          type="text"
+        />
+      </div>
+      <div
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-orange-400 rounded-sm"
+      >
+        <div id="tinhChiPhiHoaDon" class="w-full mt-2 text-2xl cursor-pointer">
+          Tính chi phí
+        </div>
+      </div>
+      <div
+        id="showBlock"
+        class="flex justify-center items-center flex-col text-center ml-4 py-4 my-4 max-w-[400px]border border-solid bg-orange-400 rounded-sm hidden"
+      >
+        <div
+          id="showChiPhiHoaDon"
+          class="w-full mt-2 text-2xl cursor-pointer"
+        ></div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
